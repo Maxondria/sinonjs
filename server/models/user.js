@@ -1,8 +1,7 @@
-'use strict';
 module.exports = (sequelize, DataTypes) => {
-  var user = sequelize.define('user', {
+  var user = sequelize.define("user", {
     email: {
-      type:DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false
     },
     firstName: DataTypes.STRING,
@@ -10,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     wishlistId: DataTypes.INTEGER
   });
 
-  user.associate = (models) => {
+  user.associate = models => {
     user.belongsTo(models.wishlist);
   };
   return user;
